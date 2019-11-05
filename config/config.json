@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "root",
+    "username": "devuser",
     "password": "mysql10",
     "database": "testdb",
     "host": "localhost",
