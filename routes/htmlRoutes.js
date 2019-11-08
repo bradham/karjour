@@ -35,7 +35,7 @@ module.exports = function(app) {
   // Load resources page
   app.get("/resources", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("testimonial", {
+      res.render("resources", {
         msg: "Welcome!",
         examples: dbExamples
       });
