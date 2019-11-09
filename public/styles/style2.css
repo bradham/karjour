@@ -3,7 +3,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background: #dadadb !important;
+    background: #e9ecef !important;
     }
 
     .searchbar{
@@ -50,7 +50,7 @@
     }
 
     h1 {
-        color: navy;
+        color: navy !important;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
         font-size: 70px !important;
       }
@@ -74,5 +74,15 @@
       }
       
       .page-header {
-        background-image:  url("../images/KARJOURN.png");
+        background-color: #e9ecef !important;
       } 
+
+      .nav-link.active {
+        color: navy !important;
+        background-color:#e9ecef!important;
+        border-color: #dee2e6 #dee2e6 #fff;
+      }
+
+      body {
+        background-color:#e9ecef!important;
+      }
