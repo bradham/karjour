@@ -46,8 +46,17 @@ h3 {
 /* .container-fluid {
 background-image: styles/images/KANJOUR.js
 }
+*/
 
+.page-header {
+  background-image:  url("../images/KARJOURN.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+} 
 
 body {
-  background-image:  url(../images/KANJOUR.jpg);
-} */
+  background-color:#e9ecef;
+}
+center {
+  background-color: #e9ecef;
+}

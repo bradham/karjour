@@ -73,4 +73,6 @@
         font-size: 30px !important;
       }
       
-      
+      .page-header {
+        background-image:  url("../images/KARJOURN.png");
+      } 
