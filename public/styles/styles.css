@@ -10,7 +10,7 @@ h1 {
 
 h2 {
   color: rgb(1, 1, 14);
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
 }
 
@@ -19,7 +19,11 @@ h2 {
   color: navy;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-
+h3 {
+  color: rgb(1, 1, 14);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+}
 
 
 
@@ -30,10 +34,20 @@ h2 {
   
 }
 
-
-body {
-  background: url(kanjour.png) fixed !important;
-  background-size: cover !important;
-  
+.tform {
+  align-items: center;
+  background-color: rgb(84, 84, 139);
+ margin-left: 10%;
+ margin-right: 10%;
 }
 
+
+
+/* .container-fluid {
+background-image: styles/images/KANJOUR.js
+}
+
+
+body {
+  background-image:  url(../images/KANJOUR.jpg);
+} */
