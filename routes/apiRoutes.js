@@ -36,6 +36,19 @@ module.exports = function(app) {
     });
   });
 
+  // Create a new testimonial
+  app.post("/api/testimonial", function(req, res) {
+    console.log("Name in post: " + req.body.user);
+    // var data = {
+    //   title: req.body.title,
+    //   tBody: req.body.tBody,
+    //   user: req.body.user
+    // };
+    db.Testimonial.create(req.body).then(function(dbTestimonial) {
+      res.json(dbTestimonial);
+    });
+  });
+
   // Delete an example by id
   app.delete("/api/examples/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(function(
