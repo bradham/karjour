@@ -1,33 +1,104 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Kanjour</title>
+
+       <meta name="author" content="KanjourApp">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h1> <center>
+				KANJOUR </center>
+				</h1>
+			</div>
+			<h2><center>
+				Bootcamp Graduates Career Portal
+			</center></h2>
+			<p><center>
+				You have survived Web Development Bootcamp, we are now here to support you during your biggest project...<strong>GETTING AND KEEPING A JOB</strong>
+			</center></p>
+			<p>
+				<a class="btn" href="#"></a>
+			</p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" alt="JobHuntingImage" src="styles/images/jobhuntlandingpage.jpg">
+						<div class="card-block">
+							<h5 class="card-title">
+								Job Search
+							</h5>
+							<p class="card-text">
+								Find the best web development jobs in your ideal location
+							</p>
+							<p>
+								<a class="btn btn-primary" href="/jobhunt">SEARCH</a> <a class="btn" href="/jobhunt"></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" alt="ResourcesImage" src="styles/images/resourceslandingpage.jpg">
+						<div class="card-block">
+							<h5 class="card-title">
+								Helpful Resources
+							</h5>
+							<p class="card-text">
+								Resources and websites curated monthhly to provide you with a leg up on in the job search market.
+							</p>
+							<p>
+								<a class="btn btn-primary" href="/resources">LEARN MORE</a> <a class="btn" href="/resources"></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img class="card-img-top" alt="TestimonialImage" src="styles/images/testimonialslandingpage.jpg">
+						<div class="card-block">
+							<h5 class="card-title">
+								Testimonials
+							</h5>
+							<p class="card-text">
+								Real stories from fellow job seekers. Find out about their highs and lows, and share your own testimonials
+							</p>
+							<p>
+								<a class="btn btn-primary" href="/testimonial">LEARN MORE</a> <a class="btn" href="/testimonial"></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br> <br>
+		
+			<div class="jumbotron">
+				<h2>
+					Employer Portal
+				</h2>
+				<p>
+					<a class="btn btn-primary btn-large" href="/employerportal">Enter Your Job Vacancies Here</a>
+				</p>
+			</div>
+		</div>
+	</div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
