@@ -1,23 +1,25 @@
-const Sequelize = require("sequelize");
-const db = require("../models/jobs.sql");
-
-const job = db.define("job", {
+module.exports = function(sequelize, DataTypes) {
+  var Job = sequelize.define("Job", {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
     title: {
-        type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     technologies: {
-        type: Sequelize.STRING
+      type: DataTypes.STRING
     },
     description: {
-        type: Sequelize.STRING
+      type: DataTypes.TEXT
     },
     budget: {
-        type: Sequelize.STRING
+      type: DataTypes.STRING
     },
-    contact_email: {
-        type: Sequelize.STRING
+    contactEmail: {
+      type: DataTypes.STRING
     }
-})
-
-module.exports = jobsDataModel.js;
-
+  });
+  return Job;
+};
