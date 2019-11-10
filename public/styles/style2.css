@@ -1,0 +1,96 @@
+.container h-100{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e9ecef !important;
+    }
+
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color: rgb(84, 84, 117);
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: navy;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    }
+
+    h1 {
+        color: navy !important;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+        font-size: 70px !important;
+      }
+      
+      h2 {
+        color: rgb(1, 1, 14) !important;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+        font-size: 30px !important;
+      }
+      
+      
+      .jumbotron {
+        color: navy!important;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+      }
+
+      h3 {
+        color: #e9ecef !important;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+        font-size: 30px !important;
+      }
+
+      h4 {
+        color: rgb(1, 1, 14);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 25px;
+      }
+
+      
+      
+      .page-header {
+        background-color: #e9ecef !important;
+      } 
+
+      .nav-link.active {
+        color: navy !important;
+        background-color:#e9ecef!important;
+        border-color: #dee2e6 #dee2e6 #fff;
+      }
+
+      body {
+        background-color:#e9ecef!important;
+      }

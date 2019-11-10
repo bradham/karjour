@@ -35,7 +35,27 @@ module.exports = function(app) {
   // Load resources page
   app.get("/resources", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("testimonial", {
+      res.render("resources", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  // Testimonial Form page
+  app.get("/testimonialform", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("testimonialform", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
+    });
+  });
+
+  // JobSearch Form page
+  app.get("/jobsearch", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("jobsearch", {
         msg: "Welcome!",
         examples: dbExamples
       });
