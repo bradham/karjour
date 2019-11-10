@@ -62,15 +62,15 @@ module.exports = function(app) {
     });
   });
 
-    // Employer page
-    app.get("/employer", function(req, res) {
-      db.Example.findAll({}).then(function(dbExamples) {
-        res.render("employer", {
-          msg: "Welcome!",
-          examples: dbExamples
-        });
+  // Employer page
+  app.get("/employer", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("employer", {
+        msg: "Welcome!",
+        examples: dbExamples
       });
     });
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
