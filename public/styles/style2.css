@@ -68,10 +68,18 @@
       }
 
       h3 {
-        color: rgb(1, 1, 14) !important;
+        color: #e9ecef !important;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
         font-size: 30px !important;
       }
+
+      h4 {
+        color: rgb(1, 1, 14);
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 25px;
+      }
+
+      
       
       .page-header {
         background-color: #e9ecef !important;

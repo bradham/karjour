@@ -52,15 +52,15 @@ module.exports = function(app) {
     });
   });
 
- // JobSearch Form page
- app.get("/jobsearch", function(req, res) {
-  db.Example.findAll({}).then(function(dbExamples) {
-    res.render("jobsearch", {
-      msg: "Welcome!",
-      examples: dbExamples
+  // JobSearch Form page
+  app.get("/jobsearch", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("jobsearch", {
+        msg: "Welcome!",
+        examples: dbExamples
+      });
     });
   });
-});
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

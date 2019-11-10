@@ -24,7 +24,11 @@ h3 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
 }
-
+h4 {
+  color: rgb(1, 1, 14);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 25px;
+}
 
 
 .btn-primary {
@@ -43,10 +47,6 @@ h3 {
 
 
 
-/* .container-fluid {
-background-image: styles/images/KANJOUR.js
-}
-*/
 
 .page-header {
   background-image:  url("../images/KARJOURN.png");
