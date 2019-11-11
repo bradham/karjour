@@ -1,4 +1,4 @@
-<link href="styles/style2.css" rel="stylesheet">
+{{!-- <link href="styles/style2.css" rel="stylesheet"> --}}
 
 <div class="row">
 	<div class="col-md-12">
@@ -22,19 +22,27 @@
 			</h1>
 			<h2>
 				<center> JOB SEARCH </center>
-			</h2 <h4>
-			<center>
-				Use the explore button below to sgitearch for the type of programs and frameworks that you know best,
-				<br>This is return all of the available jobs that are best suited to ...<strong>YOUR SKILLSET</strong>
-			</center>
+			</h2>
+			<h4>
+				<center>
+					Use the explore button below to search for the type of programs and frameworks that you know best,
+					<br>This will return all of the available jobs that are best suited to ...<strong>YOUR
+						SKILLSET</strong>
+				</center>
 			</h4>
 		</div>
 		<div class="container h-100">
 			<div class="d-flex justify-content-center h-100">
-				<div class="searchbar">
-					<input class="search_input" type="text" name="" placeholder="Search...">
-					<a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-				</div>
+				<form class="search-form">
+					<div class="searchbar">
+						<input class="search_input" type="text" name="" placeholder="Search...">
+
+						<a href="#" class="search_icon"><i class="fas fa-search"><button type="submit"></button></i></a>
+					</div>
+
+				</form>
+
+
 			</div>
 		</div>
 
@@ -43,6 +51,7 @@
 
 			<ul>
 
+				<p>{{text}}</p>
 				<li>Title: {{title}}</li>
 				<li>Description: {{description}}</li>
 				<li>Salary: {{budget}}</li>
@@ -50,10 +59,11 @@
 
 			</ul>
 
-			{{#unless jobs}}
-			<p>Sorry, no jobs match your search</p>
-			{{/unless}}
-
 		</div>
 
 		{{/each}}
+
+		{{#unless jobs}}
+		<p>Sorry, no jobs match your search. Pleae search again</p>
+		{{/unless}}
+	

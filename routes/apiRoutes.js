@@ -19,7 +19,7 @@ module.exports = function(app) {
       .then(function(jobs) {
         console.log("Job records from db: " + JSON.stringify(jobs));
         //return the jobs
-        res.send(jobs);
+        res.render("jobsearch", { jobs });
       })
       .catch(err => console.log(err));
   });

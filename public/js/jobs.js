@@ -1,17 +1,46 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 //was: (document).ready
-$(document).ready(function() {
+$(function() {
   //jobSearchContainer holds all of our vacancies
   console.log("jobs.js ready");
 
-  var searchInputClass = $(".search_input");
+  var searchBarClass = $(".search-form");
   //var jobSearchContainer = $(".jobSearch-container");
   //var jobCategorySelect = $("#category");
   // Click events for the edit button
   //$(document).on("click", "button.edit", handleJobSearch);
 
-  searchInputClass.on("keyup", handleKeypress());
-  var jobs;
+  searchBarClass.on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var keyword = $(".search_input")
+      .val()
+      .trim();
+
+    console.log("keyword is: " + keyword);
+
+    window.location = "/api/search/" + keyword;
+
+    // Send the POST request.
+    // $.ajax("/api/search/" + keyword, {
+    //   type: "GET"
+    //   //data: newCat
+    // }).then(function(data) {
+    //   console.log("Jobs", data);
+    //   //var jobs = data;
+    //   //var jobResult = JSON.stringify(jobs);
+
+    //   //location.reload("jobsearch", { jobs });
+    // });
+
+    // Number 13 is the "Enter" key on the keyboard
+    // var keyPressed = event.keyCode;
+    // if (keyPressed === 13) {
+    //   var newKeyword = $(".search_input").val();
+    //   getJobs(newKeyword);
+    // }
+  });
 
   // This function grabs vacancies from the database and updates the view
   function getJobs(keyword) {
@@ -96,12 +125,5 @@ $(document).ready(function() {
   // }
 
   // This function handles getting jobs when the Enter key is pressed
-  function handleKeypress() {
-    console.log("key is: " + event.keyCode);
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      var newKeyword = $(this).val();
-      getJobs(newKeyword);
-    }
-  }
+  handleKeypress = function(event) {};
 });
