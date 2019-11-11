@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     technologies: {
-      type: DataTypes.STRING
+      type: DataTypes.TEXT
     },
     description: {
       type: DataTypes.TEXT

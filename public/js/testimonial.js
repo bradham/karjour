@@ -1,9 +1,43 @@
 $(document).ready(function() {
   // Testimonial Container holds all of our testimonials
-  var testimonialContainer = $(".testimonial-container");
-  var postCategorySelect = $("#category");
+  //var testimonialContainer = $(".testimonial-container");
+  //var postCategorySelect = $("#category");
+
+  var targetForm = $("#tmForm");
   // Click events for the edit button
-  $(document).on("click", "button.edit", handlePostEdit);
+  //$(document).on("click", "button.edit", handlePostEdit);
+
+  //Listen for the submit button on our testimonial form
+  targetForm.on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var tName = $("#tmName")
+      .val()
+      .trim();
+
+    //TODO: uncomment
+    // var tTitle = $("#tmTitle")
+    //   .val()
+    //   .trim();
+
+    // var tBody = $("#tmBody")
+    //   .val()
+    //   .trim();
+
+    console.log("Tesimonial name is: " + tName);
+
+    // TODO: Send the POST request MODIFY.
+    $.ajax("/api/cats", {
+      type: "POST",
+      data: newCat
+    }).then(function() {
+      console.log("created new cat");
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
+
   postCategorySelect.on("change", handleCategoryChange);
   var posts;
 
@@ -71,13 +105,13 @@ $(document).ready(function() {
   }
 
   // Appropriate url
-  function handlePostEdit() {
-    var currentPost = $(this)
-      .parent()
-      .parent()
-      .data("post");
-    window.location.href = "/cms?post_id=" + currentPost.id;
-  }
+  // function handlePostEdit() {
+  //   var currentPost = $(this)
+  //     .parent()
+  //     .parent()
+  //     .data("post");
+  //   window.location.href = "/cms?post_id=" + currentPost.id;
+  // }
 
   // This function displays a message when there are no posts
   function displayEmpty() {

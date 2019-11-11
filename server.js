@@ -1,5 +1,5 @@
 //Switch to load test data into database
-var iWantData = false;
+var iWantData = true;
 
 require("dotenv").config();
 var express = require("express");
