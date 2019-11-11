@@ -3,12 +3,12 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("index", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    //db.Example.findAll({}).then(function(dbExamples) {
+    res.render("index", {
+      msg: "Welcome!"
+      //examples: dbExamples
     });
+    //});
   });
 
   // Load example page and pass in an example by id
@@ -52,13 +52,11 @@ module.exports = function(app) {
     });
   });
 
-  // JobSearch Form page
+  // JobSearch Form page.
   app.get("/jobsearch", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("jobsearch", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
+    db.Example.findAll({}).then(function() {
+      var jobs = JSON.parse('[{"text": "Please search above for jobs"}]');
+      res.render("jobsearch", { jobs });
     });
   });
 
