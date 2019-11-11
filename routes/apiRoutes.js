@@ -12,14 +12,28 @@ module.exports = function(app) {
     console.log("term is: " + term);
 
     // This is saying "anything" search term "anything".(As long as the serch term is there it will pick it up)
+    //This findAll will give us a promise back.
+    //jobs will be the records we get back from the database.
     db.Job.findAll({ where: { technologies: { [Op.like]: "%" + term + "%" } } })
-      // This findAll will give us a promise back.
+
       .then(function(jobs) {
         console.log("Job records from db: " + JSON.stringify(jobs));
-        res.render("jobsearch", { jobs });
+        //return the jobs
+        res.send(jobs);
       })
-      //.then(jobs => res.render("jobsearch", { jobs })) //jobs will be the records we get back from the database
       .catch(err => console.log(err));
+  });
+
+  app.post("/api/jobs", function(req, res) {
+    console.log("Technology in post: " + req.body.technologies);
+    // var data = {
+    //   title: req.body.title,
+    //   tBody: req.body.tBody,
+    //   user: req.body.user
+    // };
+    db.Job.create(req.body).then(function(dbJob) {
+      res.json(dbJob);
+    });
   });
 
   // Get all examples
