@@ -52,10 +52,10 @@ module.exports = function(app) {
     });
   });
 
-  // JobSearch Form page.
+  // JobSearch Form page
   app.get("/jobsearch", function(req, res) {
     db.Example.findAll({}).then(function() {
-      var jobs = JSON.parse('[{"text": "Please search above for jobs"}]');
+      var jobs = JSON.parse("[{\"text\": \"Please search above for jobs\"}]");
       res.render("jobsearch", { jobs });
     });
   });

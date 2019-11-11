@@ -43,34 +43,34 @@ $(function() {
   });
 
   // This function grabs vacancies from the database and updates the view
-  function getJobs(keyword) {
-    var keywordString = keyword || "";
-    if (keywordString) {
-      keywordString = "/api/search/" + keywordString;
-    }
-    $.get(keywordString, function(data) {
-      console.log("Jobs", data);
-      jobs = data;
-      //var jobResult = JSON.stringify(jobs);
+  // function getJobs(keyword) {
+  //   var keywordString = keyword || "";
+  //   if (keywordString) {
+  //     keywordString = "/api/search/" + keywordString;
+  //   }
+  //   $.get(keywordString, function(data) {
+  //     console.log("Jobs", data);
+  //     jobs = data;
+  //     //var jobResult = JSON.stringify(jobs);
 
-      if (jobs.length !== 0) {
-        res.render("jobsearch", { jobs });
-      } else {
-        // var noResults =
-        //   "{title: 'Sorry, no jobs match your search keyword.'}";
-        // noResults = JSON.parse(noResults);
-        // console.log("No result obj: " + JSON.stringify(noResults));
+  //     if (jobs.length !== 0) {
+  //       res.render("jobsearch", { jobs });
+  //     } else {
+  //       // var noResults =
+  //       //   "{title: 'Sorry, no jobs match your search keyword.'}";
+  //       // noResults = JSON.parse(noResults);
+  //       // console.log("No result obj: " + JSON.stringify(noResults));
 
-        res.render("jobsearch", { jobs });
-      }
+  //       res.render("jobsearch", { jobs });
+  //     }
 
-      // if (!jobs || !jobs.length) {
-      //   displayEmpty();
-      // } else {
-      //   initializeRows();
-      // }
-    });
-  }
+  //     // if (!jobs || !jobs.length) {
+  //     //   displayEmpty();
+  //     // } else {
+  //     //   initializeRows();
+  //     // }
+  //   });
+  // }
 
   // Getting the initial list of job vacancies
   //getJobs();
@@ -125,5 +125,5 @@ $(function() {
   // }
 
   // This function handles getting jobs when the Enter key is pressed
-  handleKeypress = function(event) {};
+  //handleKeypress = function(event) {};
 });
