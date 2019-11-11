@@ -1,5 +1,5 @@
 //Switch to load test data into database
-var iWantData = true;
+var iWantData = false;
 
 require("dotenv").config();
 var express = require("express");
@@ -41,6 +41,7 @@ db.sequelize.sync(syncOptions).then(function() {
   //Load our database with seed data
   if (iWantData) {
     loadData(db.Job, "test/job_seeds.csv");
+    loadData(db.Testimonial, "test/testimonial_seeds.csv");
   }
 
   app.listen(PORT, function() {
@@ -61,7 +62,6 @@ function loadData(model, filename) {
     async = require("async"),
     csv = require("csv");
 
-  //var filename = "test/seeds.csv";
   var input = fs.createReadStream(filename);
   var parser = csv.parse({
     columns: true,
