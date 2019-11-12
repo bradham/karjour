@@ -2,7 +2,8 @@
 //was: (document).ready
 $(function() {
   //jobSearchContainer holds all of our vacancies
-  console.log("jobs.js ready");
+  //Debug connection issues
+  //console.log("jobs.js ready");
 
   var searchBarClass = $(".search-form");
   //var jobSearchContainer = $(".jobSearch-container");
