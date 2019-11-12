@@ -1,9 +1,10 @@
 $(document).ready(function() {
   // Testimonial Container holds all of our testimonials
-  //var testimonialContainer = $(".testimonial-container");
+  var testimonialContainer = $(".testimonial-container");
   //var postCategorySelect = $("#category");
 
   var targetForm = $("#tmForm");
+  var fromDataTestimonial; //used for getting our return data from the db
   // Click events for the edit button
   //$(document).on("click", "button.edit", handlePostEdit);
 
@@ -16,29 +17,44 @@ $(document).ready(function() {
       .val()
       .trim();
 
-    //TODO: uncomment
-    // var tTitle = $("#tmTitle")
-    //   .val()
-    //   .trim();
+    var tTitle = $("#tmTitle")
+      .val()
+      .trim();
 
-    // var tBody = $("#tmBody")
-    //   .val()
-    //   .trim();
+    var tBody = $("#tmBody")
+      .val()
+      .trim();
 
     console.log("Tesimonial name is: " + tName);
 
+    var newTestimonial = {
+      title: tTitle,
+      tBody: tBody,
+      user: tName
+    };
+
     // TODO: Send the POST request MODIFY.
-    $.ajax("/api/cats", {
+    $.ajax("/api/testimonial", {
       type: "POST",
-      data: newCat
-    }).then(function() {
-      console.log("created new cat");
+      data: newTestimonial
+    }).then(function(data) {
+      console.log("created new testimonial");
+
+      console.log("testimonial data", data);
+
+      fromDataTestimonial = data;
+      if (!fromDataTestimonial || !fromDataTestimonial.length) {
+        displayEmpty();
+      } else {
+        initializeRows();
+      }
+
       // Reload the page to get the updated list
-      location.reload();
+      //location.reload();
     });
   });
 
-  postCategorySelect.on("change", handleCategoryChange);
+  //postCategorySelect.on("change", handleCategoryChange);
   var posts;
 
   // This function grabs testimonial from the database and updates the view
@@ -59,16 +75,16 @@ $(document).ready(function() {
   }
 
   // Getting the initial list of posts
-  getPosts();
+  //getPosts();
   // InitializeRows handles appending all of our constructed post HTML inside
   // testimonialContainer
   function initializeRows() {
     testimonialContainer.empty();
-    var postsToAdd = [];
-    for (var i = 0; i < posts.length; i++) {
-      postsToAdd.push(createNewRow(posts[i]));
+    var testimonialToAdd = [];
+    for (var i = 0; i < fromDataTestimonial.length; i++) {
+      testimonialToAdd.push(createNewRow(fromDataTestimonial[i]));
     }
-    testimonialContainer.append(postsToAdd);
+    testimonialContainer.append(testimonialToAdd);
   }
 
   // This function constructs a post's HTML
@@ -119,7 +135,7 @@ $(document).ready(function() {
     var messageH2 = $("<h2>");
     messageH2.css({ "text-align": "center", "margin-top": "50px" });
     messageH2.html(
-      "No one has posted a testimonial on this category as yet, feel free to navigate to another category or navigate to <a href='/cms'>here</a> in order to create a new post."
+      "No one has posted a testimonial on this category as yet, feel free to navigate to another category or navigate to <a href='/testimonialform'>here</a> in order to create a new post."
     );
     testimonialContainer.append(messageH2);
   }
