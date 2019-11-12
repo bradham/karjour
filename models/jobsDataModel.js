@@ -1,5 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Job = sequelize.define("Job", {
+    //TODO: COMPANY name short
+    // LOCATION SHORT string
+    //CULTURE long text
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
