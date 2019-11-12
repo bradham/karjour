@@ -22,6 +22,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     contactEmail: {
       type: DataTypes.STRING
+    },
+    companyName: {
+      type: DataTypes.STRING
+    },
+    culture: {
+      type: DataTypes.STRING
+    },
+    location: {
+      type: DataTypes.STRING
     }
   });
   return Job;
