@@ -1,3 +1,6 @@
+//We need moment for displayig time of post
+//var moment = require("moment");
+
 $(document).ready(function() {
   // Testimonial Container holds all of our testimonials
   var testimonialContainer = $(".testimonial-container");
@@ -43,10 +46,16 @@ $(document).ready(function() {
       console.log("testimonial data", data);
 
       fromDataTestimonial = data;
-      if (!fromDataTestimonial || !fromDataTestimonial.length) {
+      if (!fromDataTestimonial.id) {
+        //old check: || !fromDataTestimonial.length) {
         displayEmpty();
       } else {
-        initializeRows();
+        testimonialContainer.empty();
+        var finalTestimonial = createNewRow(fromDataTestimonial);
+        $("#tmForm").hide();
+        testimonialContainer.append(finalTestimonial);
+
+        //initializeRows(fromDataTestimonial);
       }
 
       // Reload the page to get the updated list
@@ -55,40 +64,40 @@ $(document).ready(function() {
   });
 
   //postCategorySelect.on("change", handleCategoryChange);
-  var posts;
+  //var posts;
 
   // This function grabs testimonial from the database and updates the view
-  function getPosts(category) {
-    var categoryString = category || "";
-    if (categoryString) {
-      categoryString = "/category/" + categoryString;
-    }
-    $.get("/api/posts" + categoryString, function(data) {
-      console.log("Posts", data);
-      posts = data;
-      if (!posts || !posts.length) {
-        displayEmpty();
-      } else {
-        initializeRows();
-      }
-    });
-  }
+  // function getPosts(category) {
+  //   var categoryString = category || "";
+  //   if (categoryString) {
+  //     categoryString = "/category/" + categoryString;
+  //   }
+  //   $.get("/api/posts" + categoryString, function(data) {
+  //     console.log("Posts", data);
+  //     posts = data;
+  //     if (!posts || !posts.length) {
+  //       displayEmpty();
+  //     } else {
+  //       initializeRows();
+  //     }
+  //   });
+  // }
 
   // Getting the initial list of posts
   //getPosts();
   // InitializeRows handles appending all of our constructed post HTML inside
   // testimonialContainer
-  function initializeRows() {
-    testimonialContainer.empty();
-    var testimonialToAdd = [];
-    for (var i = 0; i < fromDataTestimonial.length; i++) {
-      testimonialToAdd.push(createNewRow(fromDataTestimonial[i]));
-    }
-    testimonialContainer.append(testimonialToAdd);
-  }
+  // function initializeRows() {
+  //   testimonialContainer.empty();
+  //   var testimonialToAdd = [];
+  //   for (var i = 0; i < fromDataTestimonial.length; i++) {
+  //     testimonialToAdd.push(createNewRow(fromDataTestimonial[i]));
+  //   }
+  //   testimonialContainer.append(testimonialToAdd);
+  // }
 
   // This function constructs a post's HTML
-  function createNewRow(post) {
+  function createNewRow(data) {
     var newPostCard = $("<div>");
     newPostCard.addClass("card");
     var newPostCardHeading = $("<div>");
@@ -96,7 +105,7 @@ $(document).ready(function() {
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostCategory = $("<h5>");
-    newPostCategory.text(post.category);
+    newPostCategory.text(data.user);
     newPostCategory.css({
       float: "right",
       "font-weight": "700",
@@ -105,18 +114,20 @@ $(document).ready(function() {
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     var newPostBody = $("<p>");
-    newPostTitle.text(post.title + " ");
-    newPostBody.text(post.body);
-    var formattedDate = new Date(post.createdAt);
-    formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-    newPostDate.text(formattedDate);
+    newPostTitle.text(data.title + " ");
+    newPostBody.text(data.tBody);
+
+    //moment npm needs linking
+    //var formattedDate = new Date(post.createdAt);
+    //formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+    //newPostDate.text(formattedDate);
     newPostTitle.append(newPostDate);
     newPostCardHeading.append(newPostTitle);
     newPostCardHeading.append(newPostCategory);
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
-    newPostCard.data("post", post);
+    newPostCard.data("post", data);
     return newPostCard;
   }
 
@@ -141,8 +152,8 @@ $(document).ready(function() {
   }
 
   // This function handles reloading new posts when the category changes
-  function handleCategoryChange() {
-    var newPostCategory = $(this).val();
-    getPosts(newPostCategory);
-  }
+  // function handleCategoryChange() {
+  //   var newPostCategory = $(this).val();
+  //   getPosts(newPostCategory);
+  // }
 });
