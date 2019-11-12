@@ -31,8 +31,8 @@
 				</center>
 			</h4>
 		</div>
-		<div class="container h-100">
-			<div class="d-flex justify-content-center h-100">
+		<div class="container h-10">
+			<div class="d-flex justify-content-center h-10">
 				<form class="search-form">
 					<div class="searchbar">
 						<input class="search_input" type="text" name="" placeholder="Search...">
@@ -45,6 +45,8 @@
 
 			</div>
 		</div>
+
+		{{#if jobs}}
 
 		{{#each jobs }}
 		<div class="jobPostsContainer">
@@ -63,8 +65,12 @@
 
 		{{/each}}
 
-		{{#unless jobs}}
+		{{else}}
 		<p>Sorry, no jobs match your search. Pleae search again</p>
-		{{/unless}}
+		{{/if}}
 
-  <script type="text/javascript" src="/js/jobs.js"></script>
+		{{!-- 
+		{{#unless jobs}}
+		{{/unless}}
+ --}}
+		<script type="text/javascript" src="/js/jobs.js"></script>

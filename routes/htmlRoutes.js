@@ -24,12 +24,26 @@ module.exports = function(app) {
 
   // Load testimonials page
   app.get("/testimonial", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("testimonial", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    // This is saying "anything" search term "anything".(As long as the serch term is there it will pick it up)
+    //This findAll will give us a promise back.
+    //jobs will be the records we get back from the database.
+    db.Testimonial.findAll({})
+
+      .then(function(testimonials) {
+        console.log(
+          "Testimonial records from db: " + JSON.stringify(testimonials)
+        );
+        //return the Testimonials
+        res.render("testimonial", { testimonials });
+      })
+      .catch(err => console.log(err));
+
+    // db.Example.findAll({}).then(function (dbExamples) {
+    //   res.render("testimonial", {
+    //     msg: "Welcome!",
+    //     examples: dbExamples
+    //   });
+    // });
   });
 
   // Load resources page
@@ -44,20 +58,21 @@ module.exports = function(app) {
 
   // Testimonial Form page
   app.get("/testimonialform", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Example.findAll({}).then(function() {
       res.render("testimonialform", {
-        msg: "Welcome!",
-        examples: dbExamples
+        msg: "Welcome!"
+        //examples: dbExamples
       });
     });
   });
 
   // JobSearch Form page.
   app.get("/jobsearch", function(req, res) {
-    db.Example.findAll({}).then(function() {
-      var jobs = JSON.parse('[{"text": "Please search above for jobs"}]');
-      res.render("jobsearch", { jobs });
-    });
+    //db.Example.findAll({}).then(function() {
+    //Created JSON for default message
+    var msg = JSON.parse('[{"text": "Jobs will be listed here"}]');
+    res.render("jobsearch", { msg }); //removed argument { jobs }
+    //});
   });
 
   // Employer page
