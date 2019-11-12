@@ -13,7 +13,7 @@ Karjour our full-stack web application makes the connection between the job seek
 Designed and build using the MVC paradigm and a server-side API, Karjour not only addresses the need to see available
 positions but uses an enchanced feature of including emotional support that job seekers utilize as they face rejection
 or feelings of inadequacy.Through testing, continuous integration and the use of linting tools our group has successfully
-build a full-stack web application to confront this need within the codeing community.
+build a full-stack web application to confront this need within the coding community.
 
 
 Our group has designed, build and deployed a full-stack web application to Heroku.
