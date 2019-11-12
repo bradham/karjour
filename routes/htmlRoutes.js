@@ -58,20 +58,21 @@ module.exports = function(app) {
 
   // Testimonial Form page
   app.get("/testimonialform", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Example.findAll({}).then(function() {
       res.render("testimonialform", {
-        msg: "Welcome!",
-        examples: dbExamples
+        msg: "Welcome!"
+        //examples: dbExamples
       });
     });
   });
 
   // JobSearch Form page.
   app.get("/jobsearch", function(req, res) {
-    db.Example.findAll({}).then(function() {
-      var jobs = JSON.parse('[{"text": "Please search above for jobs"}]');
-      res.render("jobsearch", { jobs });
-    });
+    //db.Example.findAll({}).then(function() {
+    //Created JSON for default message
+    var msg = JSON.parse('[{"text": "Jobs will be listed here"}]');
+    res.render("jobsearch", { msg }); //removed argument { jobs }
+    //});
   });
 
   // Employer page
