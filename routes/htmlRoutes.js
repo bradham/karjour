@@ -24,12 +24,26 @@ module.exports = function(app) {
 
   // Load testimonials page
   app.get("/testimonial", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("testimonial", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
+    // This is saying "anything" search term "anything".(As long as the serch term is there it will pick it up)
+    //This findAll will give us a promise back.
+    //jobs will be the records we get back from the database.
+    db.Testimonial.findAll({})
+
+      .then(function(testimonials) {
+        console.log(
+          "Testimonial records from db: " + JSON.stringify(testimonials)
+        );
+        //return the Testimonials
+        res.render("testimonial", { testimonials });
+      })
+      .catch(err => console.log(err));
+
+    // db.Example.findAll({}).then(function (dbExamples) {
+    //   res.render("testimonial", {
+    //     msg: "Welcome!",
+    //     examples: dbExamples
+    //   });
+    // });
   });
 
   // Load resources page

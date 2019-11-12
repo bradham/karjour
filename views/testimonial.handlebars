@@ -1,88 +1,113 @@
-
 <div class="row">
-		<div class="col-md-12">
-			<ul class="nav nav-tabs">
-				<li class="nav-item">
-					<a class="nav-link disabled" href="/">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="/jobsearch">Job Search</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link active" href="/testimonial">Testimonials</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="/resources">Resources</a>
-				</li>
-							</ul>
-   
-			<div class="page-header">
-				<h1> <center>KARJOUR</center>
-				</h1>
-			
-			<h2><center>
-				Bootcamp Graduates Career Portal
-			</center></h2> 
-		<h4> <center>
-					We all have something to say about this amazing and scary journey. Read some of the stories and opinions, and don't forget to share your own by clicking the button below.
-				</center></h4>
-				<p>
-					<a class="btn btn-primary btn-large" href="/testimonialform">SHARE YOUR STORY</a>
-				</p>
-			
-			</div>
-				
-		
-			
+	<div class="col-md-12">
+		<ul class="nav nav-tabs">
+			<li class="nav-item">
+				<a class="nav-link disabled" href="/">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="/jobsearch">Job Search</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active" href="/testimonial">Testimonials</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link disabled" href="/resources">Resources</a>
+			</li>
+		</ul>
 
-			<div class="row">
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-img-top" alt=Testimonial Image" src="../images/Candicetestimonialpage.jpg">
-						<div class="card-block">
-							<h5 class="card-title">
-								Candice
-							</h5>
-							<p class="card-text">
-								I did not realize that it would take so much time to get a good job. I received a few offers from "okay" jobs but in time and with a lot of research I was able to get an offer a GREAT job with a GREAT company...my advice to you "Do Your Research".
-							</p>
-							
-						</div>
+		<div class="page-header">
+			<h1>
+				<center>KARJOUR</center>
+			</h1>
+
+			<h2>
+				<center>
+					Bootcamp Graduates Career Portal
+				</center>
+			</h2>
+			<h4>
+				<center>
+					We all have something to say about this amazing and scary journey. Read some of the stories and
+					opinions, and don't forget to share your own by clicking the button below.
+				</center>
+			</h4>
+			<p>
+				<a class="btn btn-primary btn-large" href="/testimonialform">SHARE YOUR STORY</a>
+			</p>
+
+		</div>
+
+
+
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" alt="Testimonial Image" src="../images/Candicetestimonialpage.jpg">
+					<div class="card-block">
+						<h5 class="card-title">
+							Candice
+						</h5>
+						<p class="card-text">
+							I did not realize that it would take so much time to get a good job. I received a few offers
+							from "okay" jobs but in time and with a lot of research I was able to get an offer a GREAT
+							job with a GREAT company...my advice to you "Do Your Research".
+						</p>
+
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-img-top" alt="Testimonial Image" src="../images/Georgetestimonialpage.jpg">
-						<div class="card-block">
-							<h5 class="card-title">
-								George
-							</h5>
-							<p class="card-text">
-								Every interview is not the same. Some companies want to know how well you will work with their already existing team. Others want you to come in ready to be superman. I am the Superman of their business dreams <span>:)</span>
-							</p>
-							
-						</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" alt="Testimonial Image" src="../images/Georgetestimonialpage.jpg">
+					<div class="card-block">
+						<h5 class="card-title">
+							George
+						</h5>
+						<p class="card-text">
+							Every interview is not the same. Some companies want to know how well you will work with
+							their already existing team. Others want you to come in ready to be superman. I am the
+							Superman of their business dreams <span>:)</span>
+						</p>
+
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="card">
-						<img class="card-img-top" alt="Testimonial Image" src="../images/Amalyahtestimonialpage.jpg">
-						<div class="card-block">
-							<h5 class="card-title">
-								Amalyah
-							</h5>
-							<p class="card-text">
-								Am I the only one who thinks that a male web developer would never be asked if he is married or if he has kids...worst yet if he is dating anyone. Why does an employer think it is okay to ask female web developers these questions in an interview????
-							</p>
-							
-						</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+					<img class="card-img-top" alt="Testimonial Image" src="../images/Amalyahtestimonialpage.jpg">
+					<div class="card-block">
+						<h5 class="card-title">
+							Amalyah
+						</h5>
+						<p class="card-text">
+							Am I the only one who thinks that a male web developer would never be asked if he is married
+							or if he has kids...worst yet if he is dating anyone. Why does an employer think it is okay
+							to ask female web developers these questions in an interview????
+						</p>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 <p>
-					<a class="btn btn-primary btn-large" href="/testimonialform">SHARE YOUR STORY</a>
-				</p>
+	<a class="btn btn-primary btn-large" href="/testimonialform">SHARE YOUR STORY</a>
+</p>
 
- 
+{{#each testimonials }}
+<div id="tsPostsContainer">
+
+	<ul>
+
+		<p>{{text}}</p>
+		<li>Category: {{title}}</li>
+		<li>Testimonial: {{tBody}}</li>
+		<li>Name: {{user}}</li>
+
+	</ul>
+
+</div>
+
+{{/each}}
