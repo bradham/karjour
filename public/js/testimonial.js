@@ -36,7 +36,6 @@ $(document).ready(function() {
       user: tName
     };
 
-    // TODO: Send the POST request MODIFY.
     $.ajax("/api/testimonial", {
       type: "POST",
       data: newTestimonial
@@ -46,6 +45,8 @@ $(document).ready(function() {
       console.log("testimonial data", data);
 
       fromDataTestimonial = data;
+      //If the data is empty then call displayEmpty to show message
+      //Else render the testimonial and hide the form
       if (!fromDataTestimonial.id) {
         //old check: || !fromDataTestimonial.length) {
         displayEmpty();
@@ -100,20 +101,26 @@ $(document).ready(function() {
   function createNewRow(data) {
     var newPostCard = $("<div>");
     newPostCard.addClass("card");
+
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
+
     var newPostTitle = $("<h2>");
-    var newPostDate = $("<small>");
-    var newPostCategory = $("<h5>");
-    newPostCategory.text(data.user);
-    newPostCategory.css({
+    //var newPostDate = $("<small>");
+
+    var newPostName = $("<h5>");
+    newPostName.text(data.user);
+    newPostName.css({
       float: "right",
       "font-weight": "700",
       "margin-top": "-15px"
     });
+
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
+
     var newPostBody = $("<p>");
+
     newPostTitle.text(data.title + " ");
     newPostBody.text(data.tBody);
 
@@ -121,9 +128,9 @@ $(document).ready(function() {
     //var formattedDate = new Date(post.createdAt);
     //formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     //newPostDate.text(formattedDate);
-    newPostTitle.append(newPostDate);
+    //newPostTitle.append(newPostDate);
     newPostCardHeading.append(newPostTitle);
-    newPostCardHeading.append(newPostCategory);
+    newPostCardHeading.append(newPostName);
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
     newPostCard.append(newPostCardBody);
