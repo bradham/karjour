@@ -105,11 +105,11 @@ $(document).ready(function() {
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
 
-    var newPostTitle = $("<h2>");
+    var newPostTitle = $("<h5>");
     //var newPostDate = $("<small>");
 
     var newPostName = $("<h5>");
-    newPostName.text(data.user);
+    newPostName.text("Name: " + data.user);
     newPostName.css({
       float: "right",
       "font-weight": "700",
@@ -121,7 +121,9 @@ $(document).ready(function() {
 
     var newPostBody = $("<p>");
 
-    newPostTitle.text(data.title + " ");
+    newPostTitle.text(
+      "Your testimonial about '" + data.title + "' was created successfully."
+    );
     newPostBody.text(data.tBody);
 
     //moment npm needs linking
@@ -157,10 +159,4 @@ $(document).ready(function() {
     );
     testimonialContainer.append(messageH2);
   }
-
-  // This function handles reloading new posts when the category changes
-  // function handleCategoryChange() {
-  //   var newPostCategory = $(this).val();
-  //   getPosts(newPostCategory);
-  // }
 });
