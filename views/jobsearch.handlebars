@@ -54,21 +54,21 @@
 			<ul>
 
 				<p>{{text}}</p>
-				<li>Company Name: {{companyName}}</li>
+				<li><h6>Company Name: {{companyName}}</h6></li>
 				<li><h5>Job Title: {{title}}</h5></li>
-				<li>Description: {{description}}</li>
-				<li>Culture: {{culture}}</li>
-				<li>Location: {{location}}</li>
-				<li>Salary: {{budget}}</li>
-				<li>Email: {{contactEmail}}</li>
-				<li>Technologies needed: {{technologies}}</li>
+				<li><strong>Description:</strong> {{description}}</li>
+				<li><strong>Culture:</strong> {{culture}}</li>
+				<li><strong>Location:</strong> {{location}}</li>
+				<li><strong>Salary:</strong> {{budget}}</li>
+				<li><strong>Email:</strong> {{contactEmail}}</li>
+				<li><strong>Technologies needed:</strong> {{technologies}}</li>
 
 			</ul>
 		</div>
 				{{/each}}
 
 		{{else}}
-		<p>Sorry, no jobs match your search. Pleae search again</p>
+		<p>Sorry, no jobs available match your search. Please search again.</p>
 		{{/if}}
 
 		{{!-- 

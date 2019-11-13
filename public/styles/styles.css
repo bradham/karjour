@@ -36,6 +36,12 @@ h5 {
   font-weight: 700;
 }
 
+h6 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: navy;
+  font-weight: 600;
+}
+
 .btn-primary {
   color:rgb(239, 239, 245);
   background-color: navy;
@@ -82,4 +88,16 @@ center {
 
 #tsPostsContainer  {
   background-color: rgb(212, 212, 218)!important;
+}
+
+.card-text {
+  margin-left: 2%;
+  margin-right: .5%;
+}
+.card-title {
+  margin-left: 2%;
+}
+
+.btn {
+  margin-left: 1.75%;
 }
