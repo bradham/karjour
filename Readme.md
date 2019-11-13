@@ -1,7 +1,6 @@
 # Karjour
- 
 
-<img src= "public/images/karjour.jpg">
+![Karjour App](https://github.com/bradham/Project2/blob/master/public/images/karjour.JPG)
 
 ## Description
 Karjour is a job search database geared towards job seekers that have just completed a coding bootcamp. Not only will job seekers be able to see available jobs located near them, they will also be able to use the website for inspiration, encouragement and positive advice for those on their job hunting journey.
