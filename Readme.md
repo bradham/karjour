@@ -1,2 +1,2 @@
-#
-![picture](./public/images/Amalyahtestimialpage.jpg)
+# Project Name
+![picture](/public/images/Amalyahtestimialpage.jpg)
