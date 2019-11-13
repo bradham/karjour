@@ -21,7 +21,11 @@ $(function() {
 
     console.log("keyword is: " + keyword);
 
-    window.location = "/api/search/" + keyword;
+    if (!keyword) {
+      window.location = "/jobsearch";
+    } else {
+      window.location = "/api/search/" + keyword;
+    }
 
     // Send the POST request.
     // $.ajax("/api/search/" + keyword, {
