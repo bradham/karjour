@@ -34,7 +34,7 @@ npm install [program]
 
 ## How To Run The Program
 The application is hosted through Heroku and is available through the link below.
-https://project-2-vbc.herokuapp.com/
+https://karjour.herokuapp.com/
 
 ## Improvements
 We would like to use passport js to authenticate users.
